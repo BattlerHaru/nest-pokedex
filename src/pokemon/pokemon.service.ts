@@ -68,7 +68,7 @@ export class PokemonService {
     }
 
     try {
-      await this.pokemonModel.updateOne(updatePokemonDto)
+      await pokemon.updateOne(updatePokemonDto)
 
       return { ...pokemon.toJSON(), ...updatePokemonDto };
     } catch (error) {
