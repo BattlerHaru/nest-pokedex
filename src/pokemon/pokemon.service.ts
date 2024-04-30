@@ -30,8 +30,14 @@ export class PokemonService {
     }
   }
 
-  findAll() {
-    return `This action returns all pokemon`;
+  async findAll() {
+    const pokemon = await this.pokemonModel.find();
+
+    if (pokemon.length < 1) {
+      throw new NotFoundException(`Pokemon not founds`)
+    }
+
+    return pokemon;
   }
 
   async findOne(term: string) {
