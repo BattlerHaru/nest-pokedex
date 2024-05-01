@@ -6,6 +6,6 @@ export const EnvConfiguration = () => (
 
         port: process.env.PORT || 3000,
 
-        default_limit: process.env.DEFAULT_LIMIT || 7
+        default_limit: +process.env.DEFAULT_LIMIT || 7
     }
 )
